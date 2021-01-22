@@ -13,10 +13,10 @@ $action =
             New-Item -ItemType Directory -Force -Path $logPath
             $name = (get-date).tostring("yyyy-MM-dd")
             If ($tmp.count -gt 0) {
-                 "Kullanýmý geçen%" + $cpu + [Environment]::NewLine + (get-date).tostring("HH:mm:ss")  >> ($logPath + $name + ".log")
+                 "Kullanimi gecen%" + $cpu + [Environment]::NewLine + (get-date).tostring("HH:mm:ss")  >> ($logPath + $name + ".log")
                 $tmp | Format-Table -Autosize -Property Name, CPU >> ($logPath + $name + ".log")
             }else{
-                "Cpu Kullanýmý geçen yok  %" + $cpu + [Environment]::NewLine + (get-date).tostring("HH:mm:ss") >> ($logPath + $name + ".log")
+                "Cpu Kullanimi gecen yok  %" + $cpu + [Environment]::NewLine + (get-date).tostring("HH:mm:ss") >> ($logPath + $name + ".log")
             }
             Start-Sleep -Seconds $saniye
         }
